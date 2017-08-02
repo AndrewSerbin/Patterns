@@ -2,5 +2,5 @@ package creational.prototype;
 
 interface Copyable {
 
-	Object copy();
+    Object copy();
 }
