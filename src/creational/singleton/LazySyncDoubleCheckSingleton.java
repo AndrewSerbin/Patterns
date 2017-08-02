@@ -3,7 +3,7 @@ package creational.singleton;
 class LazySyncDoubleCheckSingleton {
 
 	static int counter;
-	private static LazySyncDoubleCheckSingleton instance;
+	private static volatile LazySyncDoubleCheckSingleton instance;
 	
 	private LazySyncDoubleCheckSingleton() { 
 		counter++;
