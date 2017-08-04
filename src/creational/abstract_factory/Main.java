@@ -18,8 +18,10 @@ class Main {
 	switch (language) {
 	case "RU":
 	    return new RuDeviceFactory();
+
 	case "EN":
 	    return new EnDeviceFactory();
+
 	default:
 	    throw new RuntimeException("Язык не поддкрживается" + language);
 	}
