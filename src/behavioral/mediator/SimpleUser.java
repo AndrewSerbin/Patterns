@@ -1,21 +1,13 @@
 package behavioral.mediator;
 
-class SimpleUser implements User {
+class SimpleUser extends User {
 
-    Chat chat;
-
-    public SimpleUser(Chat chat) {
-	this.chat = chat;
-    }
-
-    @Override
-    public void sendMessage(String message) {
-	chat.sendMessage(message, this);
+    public SimpleUser(Chat chat, String name) {
+	super(chat, name);
     }
 
     @Override
     public void getMessage(String message) {
 	System.out.println("SimpleUser get message " + message);
     }
-
 }

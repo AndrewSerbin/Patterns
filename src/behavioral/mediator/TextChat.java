@@ -9,20 +9,44 @@ class TextChat implements Chat {
     List<User> users = new ArrayList<>();
 
     public void setAdmin(User admin) {
-	this.admin = admin;
+	if (admin != null && admin instanceof Admin) {
+	    this.admin = admin;
+	} else {
+	    throw new RuntimeException("Error admin init");
+	}
     }
 
     public void addUser(User user) {
-	users.add(user);
+	if (admin == null) {
+	    throw new RuntimeException("Error simpleUser init");
+	}
+
+	if (user instanceof SimpleUser) {
+	    users.add(user);
+	} else {
+	    throw new RuntimeException("Error simpleUser init");
+	}
     }
 
     @Override
     public void sendMessage(String message, User user) {
-	for (User u : users) {
-	    u.getMessage(message);
+	if (user instanceof Admin) {
+	    for (User u : users) {
+		u.getMessage(message);
+	    }
 	}
 
-	admin.getMessage(message);
+	if (user instanceof SimpleUser) {
+	    for (User u : users) {
+		if (u.isEnable()) {
+		    u.getMessage(message);
+		}
+	    }
+
+	    if (admin.isEnable()) {
+		admin.getMessage(message);
+	    }
+	}
     }
 
 }
