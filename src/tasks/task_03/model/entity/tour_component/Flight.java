@@ -1,6 +1,6 @@
-package tasks.task_03.model.entity;
+package tasks.task_03.model.entity.tour_component;
 
-public class Flight {
+public class Flight extends TourComponent {
 
     private boolean flightThere;
 
@@ -15,5 +15,4 @@ public class Flight {
     public String toString() {
 	return "Flight [flightThere=" + flightThere + ", flightBack=" + flightBack + "]";
     }
-
 }

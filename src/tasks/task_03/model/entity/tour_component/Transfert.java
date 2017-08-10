@@ -1,6 +1,6 @@
-package tasks.task_03.model.entity;
+package tasks.task_03.model.entity.tour_component;
 
-public class Transfert {
+public class Transfert extends TourComponent {
 
     private boolean transfertFromAirport;
 

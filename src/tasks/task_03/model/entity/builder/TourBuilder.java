@@ -1,18 +1,23 @@
 package tasks.task_03.model.entity.builder;
 
-import tasks.task_03.model.entity.Flight;
+import java.util.Date;
+
 import tasks.task_03.model.entity.Tour;
-import tasks.task_03.model.entity.Transfert;
+import tasks.task_03.model.entity.tour_component.Flight;
+import tasks.task_03.model.entity.tour_component.Hotel;
+import tasks.task_03.model.entity.tour_component.Insurance;
+import tasks.task_03.model.entity.tour_component.TourComponent;
+import tasks.task_03.model.entity.tour_component.Transfert;
 
 public class TourBuilder {
 
-    private Transfert transfert;
+    private TourComponent transfert;
 
-    private Flight flight;
+    private TourComponent flight;
 
-    private boolean hotelReservation;
+    private TourComponent hotel;
 
-    private boolean insurance;
+    private TourComponent insurance;
 
     public TourBuilder setTransfert(boolean transfertFromAirport, boolean transfertToAirport) {
 	transfert = new Transfert(transfertFromAirport, transfertToAirport);
@@ -24,20 +29,20 @@ public class TourBuilder {
 	return this;
     }
 
-    public TourBuilder setHotelReservation(boolean hotelReservation) {
-	this.hotelReservation = hotelReservation;
+    public TourBuilder setHotel(Date dateForReservation) {
+	hotel = new Hotel(dateForReservation);
 	return this;
     }
 
-    public TourBuilder setInsurance(boolean insurance) {
-	this.insurance = insurance;
+    public TourBuilder setInsurance(int sum) {
+	insurance = new Insurance(sum);
 	return this;
     }
 
     public Tour build() {
 	Tour tour = new Tour();
 	tour.setFlight(flight);
-	tour.setHotelReservation(hotelReservation);
+	tour.setHotel(hotel);
 	tour.setInsurance(insurance);
 	tour.setTransfert(transfert);
 
