@@ -9,7 +9,7 @@ public class DetectiveWriter extends Writer {
     }
 
     @Override
-    void showDetails() {
+    public void showDetails() {
 	System.out.println("Detective:");
     }
 }

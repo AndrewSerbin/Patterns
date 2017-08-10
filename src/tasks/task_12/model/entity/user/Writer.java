@@ -15,5 +15,5 @@ public abstract class Writer {
 	writingAccessory.write();
     }
 
-    abstract void showDetails();
+    abstract public void showDetails();
 }
