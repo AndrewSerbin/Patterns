@@ -4,7 +4,8 @@ public class Insurance extends TourComponent {
 
     private int sum;
 
-    public Insurance(int sum) {
+    public Insurance(int sum, int price) {
+	super(price);
 	this.sum = sum;
     }
 

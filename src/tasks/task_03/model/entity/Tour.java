@@ -21,13 +21,13 @@ public class Tour implements Item {
 	    sum += transfert.getPrice();
 	}
 	if (flight != null) {
-	    sum += transfert.getPrice();
+	    sum += flight.getPrice();
 	}
 	if (hotel != null) {
-	    sum += transfert.getPrice();
+	    sum += hotel.getPrice();
 	}
 	if (insurance != null) {
-	    sum += transfert.getPrice();
+	    sum += insurance.getPrice();
 	}
 
 	// for (TourComponent component : components) {

@@ -6,7 +6,8 @@ public class Transfert extends TourComponent {
 
     private boolean transfertToAirport;
 
-    public Transfert(boolean transfertFromAirport, boolean transfertToAirport) {
+    public Transfert(boolean transfertFromAirport, boolean transfertToAirport, int price) {
+	super(price);
 	this.transfertFromAirport = transfertFromAirport;
 	this.transfertToAirport = transfertToAirport;
     }

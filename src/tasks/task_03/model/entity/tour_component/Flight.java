@@ -6,7 +6,8 @@ public class Flight extends TourComponent {
 
     private boolean flightBack;
 
-    public Flight(boolean flightThere, boolean flightBack) {
+    public Flight(boolean flightThere, boolean flightBack, int price) {
+	super(price);
 	this.flightThere = flightThere;
 	this.flightBack = flightBack;
     }
@@ -15,4 +16,5 @@ public class Flight extends TourComponent {
     public String toString() {
 	return "Flight [flightThere=" + flightThere + ", flightBack=" + flightBack + "]";
     }
+
 }

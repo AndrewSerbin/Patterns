@@ -19,23 +19,23 @@ public class TourBuilder {
 
     private TourComponent insurance;
 
-    public TourBuilder setTransfert(boolean transfertFromAirport, boolean transfertToAirport) {
-	transfert = new Transfert(transfertFromAirport, transfertToAirport);
+    public TourBuilder setTransfert(boolean transfertFromAirport, boolean transfertToAirport, int price) {
+	transfert = new Transfert(transfertFromAirport, transfertToAirport, price);
 	return this;
     }
 
-    public TourBuilder setFlight(boolean flightThere, boolean flightBack) {
-	flight = new Flight(flightThere, flightBack);
+    public TourBuilder setFlight(boolean flightThere, boolean flightBack, int price) {
+	flight = new Flight(flightThere, flightBack, price);
 	return this;
     }
 
-    public TourBuilder setHotel(Date dateForReservation) {
-	hotel = new Hotel(dateForReservation);
+    public TourBuilder setHotel(Date dateForReservation, int price) {
+	hotel = new Hotel(dateForReservation, price);
 	return this;
     }
 
-    public TourBuilder setInsurance(int sum) {
-	insurance = new Insurance(sum);
+    public TourBuilder setInsurance(int sum, int price) {
+	insurance = new Insurance(sum, price);
 	return this;
     }
 

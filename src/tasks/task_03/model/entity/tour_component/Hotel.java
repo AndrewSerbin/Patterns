@@ -6,7 +6,8 @@ public class Hotel extends TourComponent {
 
     private Date dateForReservation;
 
-    public Hotel(Date dateForReservation) {
+    public Hotel(Date dateForReservation, int price) {
+	super(price);
 	this.dateForReservation = dateForReservation;
     }
 
