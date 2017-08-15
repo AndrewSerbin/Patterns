@@ -1,23 +1,20 @@
 package tasks.task_12;
 
-import tasks.task_12.model.entity.user.Artist;
-import tasks.task_12.model.entity.user.DetectiveWriter;
-import tasks.task_12.model.entity.user.Writer;
-import tasks.task_12.model.entity.writing_accessory.Brush;
-import tasks.task_12.model.entity.writing_accessory.Pen;
-import tasks.task_12.model.entity.writing_accessory.WritingAccessory;
+import tasks.task_12.model.entity.human.Human;
+import tasks.task_12.model.entity.state.DetectiveWriterState;
+import tasks.task_12.model.entity.state.State;
 
 public class Main {
 
-    public static void main(String[] args) {
-	WritingAccessory writingAccessory = new Pen();
-	Writer writer = new DetectiveWriter(writingAccessory);
+	public static void main(String[] args) {
+		Human human = new Human("John");
 
-	writer.write();
+		State state = new DetectiveWriterState();
 
-	writingAccessory = new Brush();
-	writer = new Artist(writingAccessory);
+		human.addState(state);
 
-	writer.write();
-    }
+		human.make();
+
+		human.deleteState();
+	}
 }
